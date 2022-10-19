@@ -395,7 +395,7 @@ nav .mid li a svg {
   bottom: 0;
   transform: translate(-50%, 7px) translateZ(0);
   fill: none;
-  stroke: var(--stroke, #BBC1E1);
+  stroke: var(--stroke, #21212170);
   stroke-linecap: round;
   stroke-width: 2px;
   stroke-dasharray: var(--offset, 69px) 278px;
@@ -404,8 +404,7 @@ nav .mid li a svg {
 }
 
 nav .mid li a:hover {
-  --spacing: 4px;
-  --stroke: #275EFE;
+  --stroke: #212121;
   --stroke-delay: .1s;
   --offset: 180px;
 }

@@ -19,12 +19,17 @@ renderer.setPixelRatio(window.devicePixelRatio || 1);
 let scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, $canvas.width() / $canvas.height(), 0.1, 1000);
 
-camera.position.z = 4;
+camera.position.z = 3.5;
 
 let geometry = new THREE.SphereGeometry(.8, 128, 128);
 
-let material = new THREE.MeshPhongMaterial({
-    color: 0x212121,
+//MeshPhongMaterial
+let material = new THREE.MeshStandardMaterial({
+    // color: 0x000000,
+    wireframe: true,
+    wireframeLinewidth: 1,
+    transparent: true,
+    opacity: 0.5,
     shininess: 100
 });
 
@@ -65,6 +70,8 @@ function animate() {
     update();
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
+    //faire tourner le blob
+    sphere.rotation.y += 0.0005;
 }
 
 requestAnimationFrame(animate);
