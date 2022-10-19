@@ -226,7 +226,6 @@ body {
   }
 }
 
-
 .loader {
   position: fixed;
   top: 0;
@@ -380,6 +379,37 @@ nav ul li {
   cursor: pointer;
 }
 
+nav .mid li a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 var(--spacing, 0px);
+  transition: margin 0.25s;
+}
+nav .mid li a svg {
+  width: 76px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, #BBC1E1);
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+
+nav .mid li a:hover {
+  --spacing: 4px;
+  --stroke: #275EFE;
+  --stroke-delay: .1s;
+  --offset: 180px;
+}
+
 nav ul li:active {
   transform: scale(0.9);
 }
@@ -468,6 +498,15 @@ header .perspective-line {
   height: 50px;
   overflow: hidden;
   position: relative;
+}
+
+header #blob {
+  position: relative;
+  opacity: 0.8;
+}
+header #blob canvas {
+  width: 500px;
+  margin-top: -7%;
 }
 
 header p {
@@ -691,7 +730,18 @@ font-weight: 900;
 }
 
 .bg-write {
+  position: relative;
   height: auto;
+}
+
+.bg-write h2{
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  transform: translate(-44%, -50%);
+  height: auto;
+  z-index: 2;
+  transform: scale(0.1);
 }
 
 .bg-write canvas {
