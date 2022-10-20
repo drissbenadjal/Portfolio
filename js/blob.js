@@ -26,11 +26,11 @@ let geometry = new THREE.SphereGeometry(.8, 128, 128);
 //MeshPhongMaterial
 let material = new THREE.MeshStandardMaterial({
     // color: 0x000000,
+    // shininess: 100,
     wireframe: true,
     wireframeLinewidth: 1,
     transparent: true,
-    opacity: 0.5,
-    shininess: 100
+    opacity: 0.5
 });
 
 let lightTop = new THREE.DirectionalLight(0xFFFFFF, .7);
