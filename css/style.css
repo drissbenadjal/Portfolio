@@ -409,6 +409,30 @@ nav .mid li a:hover {
   --offset: 180px;
 }
 
+.navbar-hover {
+  color: #ffffffc4;
+  transition: all 0.5s ease-in-out;+
+  --stroke: #ffffff;
+}
+
+.navbar-hover nav .right li {
+  border-radius: 5px;
+  padding: 5px 25px;
+  padding-bottom: 8px;
+  border: solid 2px #ffffff;
+  color: #ffffff;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-hover nav .mid li a:hover {
+  --stroke: #ffffff;
+  --stroke-delay: .1s;
+  --offset: 180px;
+}
+
 nav ul li:active {
   transform: scale(0.9);
 }
@@ -457,6 +481,38 @@ nav .right li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.nav-hover{
+  display: none;
+  opacity: 0.9;
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.active-hover{
+  display: block;
+}
+
+.nav-hover #hover-text{
+  position: fixed;
+  top: 22%;
+  left: 35%;
+  transform: translate(-35%, -22%);
+  -webkit-user-select: none;
+  color: white;
+  font-size: 10vw;
+  opacity: 0.8;
+  transform: skew(-20deg);
+}
+
+.nav-hover img{
+  width: 100%;
+  height: 100vh;
 }
 
 header {
@@ -711,7 +767,7 @@ padding-right: 1rem;
 }
 
 .demo-wrapper {
-overflow-x: hidden;
+  overflow: hidden;
 }
 
 .wrapper {
