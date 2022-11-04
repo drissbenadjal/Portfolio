@@ -500,14 +500,16 @@ nav .right li {
 
 .nav-hover #hover-text{
   position: fixed;
-  top: 22%;
-  left: 35%;
-  transform: translate(-35%, -22%);
+  top: 19%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   -webkit-user-select: none;
   color: white;
-  font-size: 10vw;
+  font-size: 20vw;
+  letter-spacing: 0.15em;
   opacity: 0.8;
-  transform: skew(-20deg);
+  font-style: italic;
+  word-wrap: nowrap;
 }
 
 .nav-hover img{

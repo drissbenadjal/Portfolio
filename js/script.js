@@ -38,18 +38,47 @@ position.addEventListener("mousemove", (e) => {
   }%)`;
 });
 
-document.querySelector("#home-nav").addEventListener("mouseover", () => {
-  document.querySelector("nav").classList.add("navbar-hover");
-  document.querySelector("nav").classList.remove("navbar-scrolled");
-  document.querySelector(".nav-hover").classList.add("active-hover");
+//recuperer tout les a dans la class .mid
+const mid = document.querySelectorAll(".mid a");
+
+//pour chaque a on ajoute un event
+mid.forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    //recuperer uniquement le texte de l'a et le mettre en majuscule et le mettre dans #hover-text
+    document.querySelector("#hover-text").innerHTML = e.target.innerText.toUpperCase();
+    document.querySelector("nav").classList.add("navbar-hover");
+    document.querySelector("nav").classList.remove("navbar-scrolled");
+    document.querySelector(".nav-hover").classList.add("active-hover");
+    document.body.style.overflowY = "hidden";
+  });
+  item.addEventListener("mouseout", (e) => {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.querySelector("nav").classList.add("navbar-scrolled");
+    } else {
+      document.querySelector("nav").classList.remove("navbar-scrolled");
+    }
+    document.querySelector("nav").classList.remove("navbar-hover");
+    document.querySelector(".nav-hover").classList.remove("active-hover");
+    document.body.style.overflowY = "auto";
+  });
 });
 
-document.querySelector("#home-nav").addEventListener("mouseout", () => {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector("nav").classList.add("navbar-scrolled");
-  } else {
-    document.querySelector("nav").classList.remove("navbar-scrolled");
-  }
-  document.querySelector("nav").classList.remove("navbar-hover");
-  document.querySelector(".nav-hover").classList.remove("active-hover");
-});
+    
+
+// document.querySelector("#home-nav").addEventListener("mouseover", () => {
+//   document.querySelector("nav").classList.add("navbar-hover");
+//   document.querySelector("nav").classList.remove("navbar-scrolled");
+//   document.querySelector(".nav-hover").classList.add("active-hover");
+//   document.body.style.overflowY = "hidden";
+// });
+
+// document.querySelector("#home-nav").addEventListener("mouseout", () => {
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     document.querySelector("nav").classList.add("navbar-scrolled");
+//   } else {
+//     document.querySelector("nav").classList.remove("navbar-scrolled");
+//   }
+//   document.querySelector("nav").classList.remove("navbar-hover");
+//   document.querySelector(".nav-hover").classList.remove("active-hover");
+//   document.body.style.overflowY = "auto";
+// });
