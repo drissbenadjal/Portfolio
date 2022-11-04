@@ -5,10 +5,22 @@ const images = gsap.utils.toArray("img");
 const showDemo = () => {
   document.scrollingElement.scrollTo(0, 0);
   setTimeout(() => {
-    gsap.to(document.querySelector(".loading"), { autoAlpha: 0 });
-    gsap.to(".loading", { display: "none" });
-    gsap.to(".demo", { display: "block" });
-    document.body.style.overflowY = "auto";
+    // gsap.to(document.querySelector(".loading"), { autoAlpha: 0 });
+    // gsap.to(".loading", { display: "none" });
+    // gsap.to(".demo", { display: "block" });
+    // document.body.style.overflowY = "auto";
+    //reduire le .loading en carré et le faire disparaitre
+    gsap.to(".loading", {
+      duration: 1,
+      width: "100px",
+      height: "100px",
+      borderRadius: "50%",
+      autoAlpha: 0,
+      ease: "power4.out",
+      onComplete: () => {
+        document.body.style.overflowY = "auto";
+      },
+    });
   }, 6500);
 
   gsap.utils.toArray(".scroll-x").forEach((section, index) => {
