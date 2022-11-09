@@ -39,16 +39,16 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #212121;
-  border: 100px none #ffffff;
+  background: #d0d0d0;
+  border: 100px none #d0d0d0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #212121;
+  background: #d0d0d0;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #212121;
+  background: #d0d0d0;
 }
 
 ::-webkit-scrollbar-track {
@@ -221,6 +221,11 @@ nav {
   -webkit-box-shadow: 0px 6px 31px 6px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 6px 31px 6px rgba(0, 0, 0, 0.14);
   background-color: #20202041;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-hover {
+  padding-right: calc(5% + 5px);
   transition: all 0.5s ease-in-out;
 }
 
@@ -400,14 +405,20 @@ header #blob canvas {
   margin-top: -7%;
 }
 
-header h1{
+header .header-text {
+  position: relative;
+  width: 100%;
+}
+
+header .header-text h1{
   position: relative;
   z-index: 1;
   margin: 0;
   font-size: 7vw;
+  overflow: hidden;
 }
 
-header h2{
+header .header-text h2{
   position: relative;
   z-index: 2;
   margin: 0;
@@ -416,12 +427,11 @@ header h2{
   color: #1919199d;
 }
 
-header h3{
-  position: relative;
+header .header-text h3{
+  z-index: 1;
   margin: 0;
   font-size: 2vw;
   transform: translate(6.4px, -5vw);
-  color: #918b8b;
 }
 
 .ath {

@@ -27,17 +27,6 @@ const random = () => {
 };
 random();
 
-const logoLoaderAll = document.querySelectorAll("#logoLoader path");
-// for(let i = 0; i<logoLoaderAll.length; i++){
-//   console.log(`Letter ${i} is ${logoLoaderAll[i].getTotalLength()}`);
-// }
-const logoLoader = document.querySelector("#logoLoader");
-position.addEventListener("mousemove", (e) => {
-  logoLoader.style.transform = `translate(${e.clientX / 300 - 50}%, ${
-    e.clientY / 300 - 50
-  }%)`;
-});
-
 //recuperer tout les a dans la class .mid
 const mid = document.querySelectorAll(".mid a");
 
