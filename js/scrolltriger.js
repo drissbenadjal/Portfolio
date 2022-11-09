@@ -1,28 +1,25 @@
-/* GSAP TIMELINE */
-const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-tl.to(".text", {
-  y: "0%",
-  duration: 1.5,
-  stagger: 0.25
-});
-
-tl.to(".loading", {
-  y: "-100%",
-  duration: 1
-}); /* , "-=1" */
+// tl.to(".loading", {
+//   y: "-100%",
+//   duration: 1
+// }); /* , "-=1" */
 
 gsap.registerPlugin(ScrollTrigger);
 
 const images = gsap.utils.toArray("img");
 
 const showDemo = () => {
+  const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
   document.scrollingElement.scrollTo(0, 0);
-  // setTimeout(() => {
-  //   gsap.to(document.querySelector(".loading"), { autoAlpha: 0 });
-  //   gsap.to(".loading", { display: "none" });
-  //   document.body.style.overflowY = "auto";
-  // }, 6500);
+  setTimeout(() => {
+    gsap.to(document.querySelector(".loading"), { autoAlpha: 0 });
+    gsap.to(".loading", { display: "none" });
+    document.body.style.overflowY = "auto";
+    tl.to(".text", {
+      y: "0%",
+      duration: 1.65,
+      stagger: 0.25
+    });
+  }, 6500);
 
   gsap.utils.toArray(".scroll-x").forEach((section, index) => {
     const w = section.querySelector(".wrapper");
