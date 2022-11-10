@@ -16,6 +16,31 @@ let $canvas = $('#blob canvas'),
 renderer.setSize($canvas.width(), 500);
 renderer.setPixelRatio(window.devicePixelRatio || 1);
 
+//diminuer la taille du canvas en fonction de la taille de l'écran
+window.addEventListener('resize', function() {
+    if (window.innerWidth < 1000) {
+        renderer.setSize($canvas.width(), 200);
+        renderer.setSize($canvas.height(), 200);
+    }else{
+        renderer.setSize($canvas.width(), 300);
+        renderer.setSize($canvas.height(), 300);
+    }
+    if (window.innerWidth < 1250) {
+        renderer.setSize($canvas.width(), 300);
+        renderer.setSize($canvas.height(), 300);
+    }else {
+        renderer.setSize($canvas.width(), 400);
+        renderer.setSize($canvas.height(), 400);
+    }
+    if (window.innerWidth < 1402) {
+        renderer.setSize($canvas.width(), 400);
+        renderer.setSize($canvas.height(), 400);
+    }else {
+        renderer.setSize($canvas.width(), 500);
+        renderer.setSize($canvas.height(), 500);
+    }
+});
+
 let scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, $canvas.width() / $canvas.height(), 0.1, 1000);
 
