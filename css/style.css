@@ -97,7 +97,7 @@ body:before {
   pointer-events: none;
 }
 
-.loader {
+.loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -105,51 +105,35 @@ body:before {
   bottom: 0;
   z-index: 9999;
   width: 100%;
-  height: calc(100vh + 200px);
-  margin-top: -200px;
+  height: 100vh;
   background-color: #040404;
   -webkit-user-select: none;
   border: none;
-  filter: blur(5px);
-  transform: scale(1.1);
 }
 
-.loader .text {
-  opacity: 0.5;
-  position: relative;
-  transform: skewY(345deg) translateY(-200px);
-  animation: animateColor 5s linear infinite;
+.loader-container {
+  font-size:40px;
+  font-family: 'Red Hat Display', sans-serif;
+  letter-spacing:1.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:700px;
+  height:40px;
 }
 
-@keyframes animateColor {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-
-  100% {
-    filter: hue-rotate(360deg);
-  }
+.loader-container * {
+  display:inline-block;
+  overflow:hidden;
+  position:absolute;
 }
 
-.loader .text h2 {
-  position: relative;
-  width: 100%;
-  font-size: 6rem;
-  color: #b4b4b4;
-  pointer-events: none;
-  line-height: 0.6em;
-  white-space: nowrap;
-  text-shadow: calc(var(--x)) -30px 0 #b4b4b436;
-  transform: translateX(calc(0% - var(--x) * var(--i)));
-}
-
-.loader .text h2 span {
-  margin: 0 10px;
-}
-
-.loader .text h2 span:nth-child(even) {
-  color: transparent;
-  -webkit-text-stroke: 1px #918b8b;
+.bar {
+  width:3px;
+  height:49px;
+  position:absolute;
+  top:-1px;
 }
 
 a {
@@ -225,7 +209,7 @@ nav {
 }
 
 .navbar-hover {
-  transform: translate(-1px, 0);
+  background-color: transparent !important;
   transition: all 0.5s ease-in-out;
 }
 
@@ -430,6 +414,12 @@ header .header-text h3{
   transform: translate(7px, -0.5vw);
 }
 
+header .header-text #blob{
+  position: absolute;
+  top: 7vw;
+  right: 5%;
+}
+
 .ath {
   position: absolute;
   bottom: 20px;
@@ -464,6 +454,112 @@ header .header-text h3{
   height: 4px;
   background: #d0d0d0;
   animation: fadeIn 1s ease-in-out;
+}
+
+.rolling-text {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 24px;
+  height: 115px;
+  text-decoration: none;
+  overflow: hidden;
+  color: #ffffff;
+}
+.rolling-text:hover .letter, .rolling-text.play .letter {
+  transform: translateY(-600%);
+}
+.rolling-text .block:last-child {
+  color: #212121;
+}
+.rolling-text .letter {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.letter:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.letter:nth-child(2) {
+  transition-delay: 0.015s;
+}
+
+.letter:nth-child(3) {
+  transition-delay: 0.03s;
+}
+
+.letter:nth-child(4) {
+  transition-delay: 0.045s;
+}
+
+.letter:nth-child(5) {
+  transition-delay: 0.06s;
+}
+
+.letter:nth-child(6) {
+  transition-delay: 0.075s;
+}
+
+.letter:nth-child(7) {
+  transition-delay: 0.09s;
+}
+
+.letter:nth-child(8) {
+  transition-delay: 0.105s;
+}
+
+.letter:nth-child(9) {
+  transition-delay: 0.12s;
+}
+
+.letter:nth-child(10) {
+  transition-delay: 0.135s;
+}
+
+.letter:nth-child(11) {
+  transition-delay: 0.15s;
+}
+
+.letter:nth-child(12) {
+  transition-delay: 0.165s;
+}
+
+.letter:nth-child(13) {
+  transition-delay: 0.18s;
+}
+
+.letter:nth-child(14) {
+  transition-delay: 0.195s;
+}
+
+.letter:nth-child(15) {
+  transition-delay: 0.21s;
+}
+
+.letter:nth-child(16) {
+  transition-delay: 0.225s;
+}
+
+.letter:nth-child(17) {
+  transition-delay: 0.24s;
+}
+
+.letter:nth-child(18) {
+  transition-delay: 0.255s;
+}
+
+.letter:nth-child(19) {
+  transition-delay: 0.27s;
+}
+
+.letter:nth-child(20) {
+  transition-delay: 0.285s;
+}
+
+.letter:nth-child(21) {
+  transition-delay: 0.3s;
 }
 
 .reseaux {

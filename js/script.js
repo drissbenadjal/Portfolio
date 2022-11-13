@@ -8,25 +8,6 @@ window.onscroll = function () {
   }
 };
 
-const position = document.documentElement;
-position.style.setProperty("--x", 1000 / 6 + "px");
-position.style.setProperty("--y", 600 / 6 + "px");
-position.addEventListener("mousemove", (e) => {
-  position.style.setProperty("--x", e.clientX / 6 + "px");
-  position.style.setProperty("--y", e.clientY / 6 + "px");
-});
-const random = () => {
-  const text = document.querySelectorAll(".text h2");
-  text.forEach((item) => {
-    item.style.setProperty("--i", Math.random() * (3 - 0.35) + 0.35);
-    item.style.setProperty(
-      "--i",
-      item.style.getPropertyValue("--i").slice(0, 4)
-    );
-  });
-};
-random();
-
 //recuperer tout les a dans la class .mid
 const mid = document.querySelectorAll(".mid a");
 
@@ -38,7 +19,6 @@ mid.forEach((item) => {
     document.querySelector("nav").classList.add("navbar-hover");
     document.querySelector("nav").classList.remove("navbar-scrolled");
     document.querySelector(".nav-hover").classList.add("active-hover");
-    document.body.style.overflowY = "hidden";
   });
   item.addEventListener("mouseout", (e) => {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -48,26 +28,31 @@ mid.forEach((item) => {
     }
     document.querySelector("nav").classList.remove("navbar-hover");
     document.querySelector(".nav-hover").classList.remove("active-hover");
-    document.body.style.overflowY = "auto";
   });
 });
 
-    
+let elements = document.querySelectorAll('.rolling-text');
 
-// document.querySelector("#home-nav").addEventListener("mouseover", () => {
-//   document.querySelector("nav").classList.add("navbar-hover");
-//   document.querySelector("nav").classList.remove("navbar-scrolled");
-//   document.querySelector(".nav-hover").classList.add("active-hover");
-//   document.body.style.overflowY = "hidden";
-// });
+elements.forEach(element => {
+  let innerText = element.innerText;
+  element.innerHTML = '';
+  
+  let textContainer = document.createElement('div');
+  textContainer.classList.add('block');
+  
+  for (let letter of innerText) {
+    let span = document.createElement('span');
+    span.innerText = letter.trim() === '' ? '\xa0': letter;
+    span.classList.add('letter');
+    textContainer.appendChild(span);
+  }
+  
+  element.appendChild(textContainer);
+  element.appendChild(textContainer.cloneNode(true));
+});
 
-// document.querySelector("#home-nav").addEventListener("mouseout", () => {
-//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-//     document.querySelector("nav").classList.add("navbar-scrolled");
-//   } else {
-//     document.querySelector("nav").classList.remove("navbar-scrolled");
-//   }
-//   document.querySelector("nav").classList.remove("navbar-hover");
-//   document.querySelector(".nav-hover").classList.remove("active-hover");
-//   document.body.style.overflowY = "auto";
-// });
+elements.forEach(element => {
+  element.addEventListener('mouseover', () => {
+    element.classList.remove('play');
+  });
+});
