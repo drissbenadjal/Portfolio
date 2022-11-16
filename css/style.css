@@ -112,28 +112,28 @@ body:before {
 }
 
 .loader-container {
-  font-size:40px;
+  font-size: 40px;
   font-family: 'Red Hat Display', sans-serif;
-  letter-spacing:1.5px;
+  letter-spacing: 1.5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:700px;
-  height:40px;
+  width: 700px;
+  height: 40px;
 }
 
 .loader-container * {
-  display:inline-block;
-  overflow:hidden;
-  position:absolute;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
 }
 
 .bar {
-  width:3px;
-  height:49px;
-  position:absolute;
-  top:-1px;
+  width: 3px;
+  height: 49px;
+  position: absolute;
+  top: -1px;
 }
 
 a {
@@ -395,26 +395,26 @@ header .header-text {
   transform: translate(0, -4vw);
 }
 
-header .header-text h1{
+header .header-text h1 {
   margin: 0;
   font-size: 7vw;
   overflow: hidden;
 }
 
-header .header-text h2{
+header .header-text h2 {
   margin: 0;
   font-size: 5vw;
   transform: translate(10%, 10vw);
-  color: #1919199d;
+  color: #ffffff3b;
 }
 
-header .header-text h3{
+header .header-text h3 {
   margin: 0;
   font-size: 2vw;
   transform: translate(7px, -0.5vw);
 }
 
-header .header-text #blob{
+header .header-text #blob {
   position: absolute;
   top: 7vw;
   right: 5%;
@@ -460,17 +460,24 @@ header .header-text #blob{
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 24px;
-  height: 115px;
+  height: 100px;
   text-decoration: none;
   overflow: hidden;
-  color: #ffffff;
+  color: #fff;
+  background-color: #0000;
+  border: none;
+  cursor: pointer;
 }
-.rolling-text:hover .letter, .rolling-text.play .letter {
+
+.rolling-text:hover .letter,
+.rolling-text.play .letter {
   transform: translateY(-600%);
 }
+
 .rolling-text .block:last-child {
-  color: #212121;
+  color: #ffffff3b;
 }
+
 .rolling-text .letter {
   display: flex;
   justify-content: center;
@@ -662,6 +669,7 @@ main li {
 }
 
 .bg-write canvas {
+  opacity: 0.5;
   transform: scale(0.2);
 }
 
