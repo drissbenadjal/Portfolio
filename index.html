@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script defer src="js/tagcloud.js"></script>
   <script defer src="https://kit.fontawesome.com/9c846afb58.js" crossorigin="anonymous"></script>
   <script defer src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
   <script defer src='https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js'></script>
@@ -16,7 +17,7 @@
   <script defer src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
   <script defer src='js/splittext.min.js'></script>
   <script defer src="js/gsapanim.js"></script>
-  <script defer src="js/blob.js"></script>
+  <!-- <script defer src="js/blob.js"></script> -->
   <script defer src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -81,17 +82,32 @@
     <div class='content'>
       <div class="header-text">
         <h2 class="hide">
-          <span class="text">BENADJAL DRISS</span>
+          <span class="text">PORTFOLIO</span>
         </h2>
         <h1 class="hide">
-          <span class="text">PORTFOLIO</span>
+          <span class="text">DRISS BENADJAL</span>
         </h1>
         <h3 class="hide">
           <span class="text">DEVELOPPEUR WEB</span>
         </h3>
-        <div id="blob">
-          <canvas></canvas>
-        </div>
+      </div>
+      <div id="blob">
+        <ul class='tags-cloud'>
+          <li class='tag'><span class='wrap'>HTML</span></li>
+          <li class='tag'><span class='wrap'>PHP</span></li>
+          <li class='tag'><span class='wrap'>CSS</span></li>
+          <li class='tag'><span class='wrap'>SVG</span></li>
+          <li class='tag'><span class='wrap'>Javascript</span></li>
+          <li class='tag'><span class='wrap'>React</span></li>
+          <li class='tag'><span class='wrap'>Canvas</span></li>
+          <li class='tag'><span class='wrap'>WebGL</span></li>
+          <li class='tag'><span class='wrap'>Three.js</span></li>
+          <li class='tag'><span class='wrap'>Gsap.js</span></li>
+          <li class='tag'><span class='wrap'>Electron.js</span></li>
+          <li class='tag'><span class='wrap'>Git</span></li>
+          <li class='tag'><span class='wrap'>Linux</span></li>
+        </ul>
+        <!-- <canvas></canvas> -->
       </div>
     </div>
   </header>
@@ -167,9 +183,21 @@
       </section>
     </div>
     <section class='bg-write'>
-      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h1 class="stretch-text">
+        <span>Design</span>
+        <span class=sr-only>
+          For
+        </span>
+        <span aria-hidden="true">
+          <span>F</span>
+          <span class=stretch-o></span>
+          <span>r</span>
+        </span>
+        <span>Developers</span>
+      </h1>
       <canvas id="bgcolor"></canvas>
     </section>
+
   </main>
 </body>
 

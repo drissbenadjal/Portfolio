@@ -45,6 +45,9 @@ const showDemo = () => {
       duration: 1.65,
       stagger: 0.25
     });
+    setTimeout(() => {
+      document.querySelector('.tags-cloud').classList.add('-loaded');
+    }, 1000);
   }, 6500);
 
   gsap.utils.toArray(".scroll-x").forEach((section, index) => {
@@ -74,10 +77,10 @@ const showDemo = () => {
     },
   });
 
-  gsap.to(".bg-write h2", {
+  gsap.to(".bg-write .stretch-text", {
     scale: 5,
     scrollTrigger: {
-      trigger: ".bg-write h2",
+      trigger: ".bg-write .stretch-text",
       scrub: 1,
     },
   });
