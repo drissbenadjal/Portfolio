@@ -68,22 +68,20 @@
 }
 
 html {
-  -ms-scroll-snap-type: y mandatory;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
 body {
   padding: 0;
-  margin: 0;
+  margin-top: 0;
   font-family: "MessinaSans Regular";
   color: #fff;
   background: #040404;
-  height: 100vh;
   overflow-x: hidden;
+  width: 100%;
 }
 
-body:before {
+/* body:before {
   z-index: 10000;
   animation: grain 8s steps(10) infinite;
   background-image: url(../assets/image/noise.png);
@@ -95,7 +93,7 @@ body:before {
   top: -100%;
   width: 300%;
   pointer-events: none;
-}
+} */
 
 .loading {
   position: fixed;
@@ -662,7 +660,7 @@ header .header-text #blob {
 }
 
 main {
-  padding: 0 5%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -710,89 +708,6 @@ main li {
   height: auto;
 }
 
-.stretch-text {
-  position: absolute;
-  top: 50%;
-  left: 44%;
-  transform: translate(-44%, -50%);
-  height: auto;
-  z-index: 2;
-  transform: scale(0.1);
-  --color-one: hsl(210 80% 50%);
-  --color-two: hsl(320 100% 75%);
-  --stretch-multiplier: 5;
-  font-size: clamp(2rem, 14vmin, 8rem);
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
-  display: grid;
-  line-height: 1;
-}
-
-
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-
-
-[aria-hidden] {
-  display: flex;
-  gap: 0.02ch;
-  align-items: center;
-  color: white;
-}
-
-
-.stretch-o {
-  height: 1.42ch;
-  width: calc(var(--stretch) * 1.35ch);
-  translate: 0 -0.01ch;
-  border: 0.25ch solid white;
-  border-radius: 1ch;
-  transition: width 0.2s;
-  position: relative;
-}
-
-.stretch-text {
-  --stretch: 1;
-}
-
-.stretch-text:hover {
-  --stretch: var(--stretch-multiplier);
-}
-
-
-.stretch-o:after,
-.stretch-o:before {
-  content: "";
-  border: 0.25ch solid var(--color);
-  position: absolute;
-  inset: -0.25ch;
-  border-radius: 1ch;
-  opacity: calc(-1 + var(--stretch));
-  transition: opacity 0.2s;
-}
-
-.stretch-o:before {
-  --color: var(--color-one);
-}
-
-.stretch-o:after {
-  --color: var(--color-two);
-  mask:
-    radial-gradient(circle at top left,
-      black,
-      transparent);
-}
 
 .bg-write canvas {
   opacity: 0.5;
@@ -880,4 +795,99 @@ main li {
 .hide span {
   transform: translateY(100%);
   display: inline-block;
+}
+
+#container-scroll {
+  --target: 100%;
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-container-scroll{
+  width: 100%;
+  height: 100vh;
+}
+
+#container-scroll .stretch-text {
+  position: fixed;
+  height: auto;
+  z-index: 2;
+  transform: scale(0.1);
+  --color-one: hsl(210 80% 50%);
+  --color-two: hsl(320 100% 75%);
+  --stretch-multiplier: 5;
+  font-size: clamp(2rem, 14vmin, 8rem);
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  display: grid;
+  line-height: 1;
+}
+
+
+
+#container-scroll .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+
+#container-scroll [aria-hidden] {
+  display: flex;
+  gap: 0.02ch;
+  align-items: center;
+  color: white;
+}
+
+
+#container-scroll .stretch-o {
+  height: 1.42ch;
+  width: calc(var(--stretch) * 1.35ch);
+  translate: 0 -0.01ch;
+  border: 0.25ch solid white;
+  border-radius: 1ch;
+  transition: width 0.2s;
+  position: relative;
+}
+
+#container-scroll .stretch-text {
+  --stretch: 1;
+}
+
+#container-scroll .stretch-text:hover {
+  --stretch: var(--stretch-multiplier);
+}
+
+
+#container-scroll .stretch-o:after,
+#container-scroll .stretch-o:before {
+  content: "";
+  border: 0.25ch solid var(--color);
+  position: absolute;
+  inset: -0.25ch;
+  border-radius: 1ch;
+  opacity: calc(-1 + var(--stretch));
+  transition: opacity 0.2s;
+}
+
+#container-scroll .stretch-o:before {
+  --color: var(--color-one);
+}
+
+#container-scroll .stretch-o:after {
+  --color: var(--color-two);
+  mask:
+    radial-gradient(circle at top left,
+      black,
+      transparent);
 }

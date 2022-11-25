@@ -69,22 +69,28 @@ const showDemo = () => {
     );
   });
 
-  gsap.to(".bg-write canvas", {
-    scale: 1.35,
+  gsap.to("#container-scroll", {
+    "--target": "0%",
+    ease: "none",
     scrollTrigger: {
-      trigger: ".bg-write canvas",
-      scrub: 1,
+      trigger: "#container-scroll",
+      start: "top top",
+      end: "+=1000",
+      pin: true,
+      scrub: 1
     },
   });
 
-  gsap.to(".bg-write .stretch-text", {
-    scale: 5,
+  gsap.to("#container-scroll .stretch-text", {
+    scale: 2,
     scrollTrigger: {
-      trigger: ".bg-write .stretch-text",
+      trigger: "#container-scroll .stretch-text",
       scrub: 1,
     },
   });
 };
+
+
 
 imagesLoaded(images).on("always", showDemo);
 
