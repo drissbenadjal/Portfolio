@@ -183,7 +183,7 @@ var _onMouseMove2 = function _onMouseMove2(e) {
     const a = Math.atan2(deltaX, deltaY) - Math.PI / 2;
     const axis = [Math.sin(a), Math.cos(a), 0];
     const delta = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-    const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 10;
+    const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 30;
     _classPrivateFieldSet(this, _rotationAxis, axis);
     _classPrivateFieldSet(this, _rotationSpeed, speed);
 };

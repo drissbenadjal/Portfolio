@@ -74,6 +74,7 @@ html {
 body {
   padding: 0;
   margin-top: 0;
+  margin: 0;
   font-family: "MessinaSans Regular";
   color: #fff;
   background: #040404;
@@ -185,6 +186,7 @@ a {
 
 nav {
   top: 0;
+  left: 0;
   position: fixed;
   z-index: 5;
   width: 100%;
@@ -212,6 +214,7 @@ nav {
 }
 
 nav ul {
+  width: 100%;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -249,10 +252,6 @@ nav .mid li a svg {
   transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
 }
 
-nav ul li:hover {
-  transform: scale(1.1);
-}
-
 nav ul li:active {
   transform: scale(0.9);
 }
@@ -271,24 +270,19 @@ nav .left {
 nav .left li {
   height: 50px;
   padding-top: 2.5px;
-}
-
-nav .left h2 {
-  margin-top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-weight: 200;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
-    0 3px 0 #ccc, 0 4px 0 #ccc,
-    0 20px 30px rgba(0, 0, 0, 0.5);
 }
 
-nav .left h2 span {
-  margin-left: 1px;
-  margin-top: 4px;
-  font-size: 1.2rem;
+nav .left img {
+  height: 35px;
+}
+
+nav .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 nav .right li {
@@ -378,7 +372,7 @@ header .perspective-line {
   position: relative;
 }
 
-header #blob {
+header #blobCloud {
   position: absolute;
   right: 1vw;
 }
@@ -432,11 +426,6 @@ header #blob {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* header #blob canvas {
-  width: 500px;
-  margin-top: -7%;
-} */
-
 header .header-text {
   position: relative;
   width: 100%;
@@ -464,7 +453,7 @@ header .header-text h3 {
   transform: translate(7px, 0vw);
 }
 
-header .header-text #blob {
+header .header-text #blobCloud {
   position: absolute;
   top: 7vw;
   right: 5%;
@@ -701,17 +690,7 @@ main li {
   font-size: clamp(8rem, 15vw, 16rem);
   line-height: 1;
   font-weight: 900;
-}
-
-.bg-write {
-  position: relative;
-  height: auto;
-}
-
-
-.bg-write canvas {
-  opacity: 0.5;
-  transform: scale(0.2);
+  white-space: nowrap;
 }
 
 .slider_work {
@@ -818,7 +797,7 @@ main li {
   transform: scale(0.1);
   --color-one: hsl(210 80% 50%);
   --color-two: hsl(320 100% 75%);
-  --stretch-multiplier: 5;
+  --stretch-multiplier: 2;
   font-size: clamp(2rem, 14vmin, 8rem);
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
