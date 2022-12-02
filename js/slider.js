@@ -1,28 +1,87 @@
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-
-document.body.appendChild(renderer.domElement);
-
-const geometry = new THREE.BoxGeometry();
-
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-camera.position.z = 5;
-
-const animate = function () {
-    requestAnimationFrame(animate);
-
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
-}
-
-animate();
-
-
+var slider = new Swiper(".swiper-container", {
+    slidesPerView: 'auto',
+    spaceBetween: 150,
+    centeredSlides: true,
+    mousewheel: true
+  })
+  
+  slider.on('slideChange', function () {
+    TweenMax.to('.slide-text span', .2, {
+      y: '-100px',
+    })
+    TweenMax.to('.slide-number span', .2, {
+      x: '-100px',
+    })
+    TweenMax.to('.swiper-slide-active', .5, {
+      scale: .85
+    })
+  })
+  
+  slider.on('slideChangeTransitionEnd', function () {
+  
+    TweenMax.to('.slide-text span', .2, {
+      y: 0,
+      delay: .5
+    })
+    TweenMax.to('.slide-text span', 0, {
+      y: '100px',
+    })
+  
+    TweenMax.to('.slide-number span', .2, {
+      x: 0,
+      delay: .7
+    })
+    TweenMax.to('.slide-number span', 0, {
+      x: '100px',
+    })
+  
+    TweenMax.to('.swiper-slide-active', .5, {
+      scale: 1,
+      ease: Power4.easeOut,
+    })
+  
+    TweenMax.to('.swiper-slide-active .slide-text', 0, {
+      autoAlpha: 1
+    })
+    TweenMax.to('.swiper-slide-active .slide-number', 0, {
+      autoAlpha: 1
+    })
+  
+    TweenMax.to('.swiper-slide-next .slide-text', 0, {
+      autoAlpha: 0
+    })
+    TweenMax.to('.swiper-slide-prev .slide-text', 0, {
+      autoAlpha: 0
+    })
+  
+    TweenMax.to('.swiper-slide-next .slide-number', 0, {
+      autoAlpha: 0
+    })
+    TweenMax.to('.swiper-slide-prev .slide-number', 0, {
+      autoAlpha: 0
+    })
+  })
+  
+  TweenMax.to('.swiper-slide-next .slide-text', 0, {
+    autoAlpha: 0
+  })
+  TweenMax.to('.swiper-slide-prev .slide-text', 0, {
+    autoAlpha: 0
+  })
+  
+  TweenMax.to('.swiper-slide-next .slide-number', 0, {
+    autoAlpha: 0
+  })
+  TweenMax.to('.swiper-slide-prev .slide-number', 0, {
+    autoAlpha: 0
+  })
+  
+  TweenMax.to('.swiper-slide', 0, {
+    scale: .85,
+  })
+  
+  TweenMax.to('.swiper-slide-active', 0, {
+    scale: 1,
+  })
+  
+  
