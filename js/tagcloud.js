@@ -75,15 +75,6 @@ var _update = new WeakSet();
 
 
 class TagsCloud {
-
-
-
-
-
-
-
-
-
     constructor(root) {
         _update.add(this);
         _onMouseMove.add(this);

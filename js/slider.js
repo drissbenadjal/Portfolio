@@ -2,15 +2,16 @@ var slider = new Swiper(".swiper-container", {
     slidesPerView: 'auto',
     spaceBetween: 150,
     centeredSlides: true,
-    mousewheel: true
+    mousewheel: false,
+    mousewheelY: true,
   })
   
   slider.on('slideChange', function () {
     TweenMax.to('.slide-text span', .2, {
-      y: '-100px',
+      y: '-90px',
     })
     TweenMax.to('.slide-number span', .2, {
-      x: '-100px',
+      x: '-90px',
     })
     TweenMax.to('.swiper-slide-active', .5, {
       scale: .85
@@ -20,7 +21,7 @@ var slider = new Swiper(".swiper-container", {
   slider.on('slideChangeTransitionEnd', function () {
   
     TweenMax.to('.slide-text span', .2, {
-      y: 0,
+      y: -90,
       delay: .5
     })
     TweenMax.to('.slide-text span', 0, {

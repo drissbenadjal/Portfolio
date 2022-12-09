@@ -785,7 +785,7 @@ main li {
   align-items: center;
 }
 
-.bottom-container-scroll{
+.bottom-container-scroll {
   width: 100%;
   height: 100vh;
 }
@@ -832,7 +832,7 @@ main li {
 #container-scroll .stretch-o {
   height: 1.42ch;
   width: calc(var(--stretch) * 1.35ch);
-  translate: 0 -0.01ch;
+  translate: 0 -0.135ch;
   border: 0.25ch solid white;
   border-radius: 1ch;
   transition: width 0.2s;
@@ -877,25 +877,6 @@ main li {
   width: 100%;
 }
 
-.bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: .3;
-}
-
-.bg-text h1 {
-  font-family: "assc";
-  font-size: 500px;
-  text-align: center;
-  color: transparent;
-  -webkit-text-stroke: 3px #444;
-  text-transform: uppercase;
-}
-
-/* SLIDER
-=========================== */
 .swiper-container {
   width: 100%;
   position: absolute !important;
@@ -909,22 +890,26 @@ main li {
 }
 
 .swiper-slide {
-  width: 800px;
-  height: 500px;
+  width: calc(100vw / 2);
+  height: calc(100vw / 3.5);
 }
 
 .swiper-slide:nth-child(1) .slide-img {
   background-image: url('../assets/image/');
 }
+
 .swiper-slide:nth-child(2) .slide-img {
   background-image: url('../assets/image/');
 }
+
 .swiper-slide:nth-child(3) .slide-img {
   background-image: url('../assets/image/');
 }
+
 .swiper-slide:nth-child(4) .slide-img {
   background-image: url('../assets/image/');
 }
+
 .swiper-slide:nth-child(5) .slide-img {
   background-image: url('../assets/image/');
 }
@@ -938,10 +923,11 @@ main li {
 }
 
 .slide-img::after {
+  border-radius: 3px;
   content: '';
   width: 100%;
   height: 100%;
-  background-image: linear-gradient( 0deg, rgb(195,20,50) 0%, rgb(204,18,26) 100%);
+  background-image: linear-gradient(0deg, rgb(39, 39, 39) 0%, rgb(69, 69, 69) 100%);
   mix-blend-mode: multiply;
   position: absolute;
   left: 0;
@@ -964,7 +950,7 @@ main li {
 }
 
 .slide-number p {
-  font-size: 60px;
+  font-size: 3rem;
   font-family: "assc";
   color: #ecbb1b;
   position: relative;
@@ -977,20 +963,22 @@ main li {
 .slide-text {
   position: absolute;
   bottom: -70px;
-  left: 50px;
+  left: 20px;
   z-index: 1;
-  width: 200px;
-  height: 100px;
+  width: 400px;
+  height: 105px;
   overflow: hidden;
 }
 
 .slide-text h4 {
   color: #fff;
-  font-size: 60px;
+  font-size: 4rem;
   font-family: "assc";
   position: relative;
+  width: 100%;
 }
 
 .slide-text h4 span {
   position: absolute;
+  transform: translateY(-90px);
 }

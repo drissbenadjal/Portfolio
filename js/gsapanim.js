@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const images = gsap.utils.toArray("img");
 
-const showDemo = () => {
+const allGsap = () => {
 
   loaderContainer.innerHTML = `<span class="txt1">https://drissbenadjal.dev/</span><span class="txt2">portfolio</span><div class="bar"></div>`;
 
@@ -92,6 +92,6 @@ const showDemo = () => {
 
 
 
-imagesLoaded(images).on("always", showDemo);
+window.addEventListener("load", allGsap);
 
 
