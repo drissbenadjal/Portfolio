@@ -220,6 +220,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   list-style: none;
+  transform: scale(1);
 }
 
 nav ul li {
@@ -287,14 +288,20 @@ nav .right {
 
 nav .right li {
   border-radius: 5px;
-  padding: 5px 25px;
+  padding: 5px 15px;
   padding-bottom: 8px;
-  border: solid 2px #fff;
+  /* border: solid 2px #fff; */
   color: #fff;
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+nav .right li img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
 }
 
 .nav-hover {
@@ -795,8 +802,8 @@ main li {
   height: auto;
   z-index: 2;
   transform: scale(0.1);
-  --color-one: hsl(210 80% 50%);
-  --color-two: hsl(320 100% 75%);
+  --color-one: #1980e6;
+  --color-two: #ff80d5;
   --stretch-multiplier: 2;
   font-size: clamp(2rem, 14vmin, 8rem);
   font-family: 'Poppins', sans-serif;
@@ -950,10 +957,11 @@ main li {
 }
 
 .slide-number p {
+  font-family: 'Roboto', sans-serif;
   font-size: 3rem;
-  font-family: "assc";
-  color: #ecbb1b;
+  color: #fff;
   position: relative;
+  letter-spacing: 2px;
 }
 
 .slide-number p span {
@@ -971,11 +979,12 @@ main li {
 }
 
 .slide-text h4 {
-  color: #fff;
+  color: transparent;
   font-size: 4rem;
-  font-family: "assc";
   position: relative;
   width: 100%;
+  text-transform: uppercase;
+  -webkit-text-stroke: .2px white;
 }
 
 .slide-text h4 span {
