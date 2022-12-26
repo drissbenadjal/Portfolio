@@ -137,7 +137,7 @@ class TagsCloud {
 
 var _initEventListeners2 = function _initEventListeners2() {
     window.addEventListener('resize', _classPrivateMethodGet(this, _updatePositions, _updatePositions2).bind(this));
-    document.addEventListener('mousemove', _classPrivateMethodGet(this, _onMouseMove, _onMouseMove2).bind(this));
+    document.querySelector('header').addEventListener('mousemove', _classPrivateMethodGet(this, _onMouseMove, _onMouseMove2).bind(this));
 };
 var _updatePositions2 = function _updatePositions2() {
     const sin = Math.sin(_classPrivateFieldGet(this, _rotationAngle));
@@ -169,12 +169,12 @@ var _updatePositions2 = function _updatePositions2() {
 };
 var _onMouseMove2 = function _onMouseMove2(e) {
     const rootRect = _classPrivateFieldGet(this, _root).getBoundingClientRect();
-    const deltaX = e.clientX - (rootRect.left + _classPrivateFieldGet(this, _root).offsetWidth / 2);
-    const deltaY = e.clientY - (rootRect.top + _classPrivateFieldGet(this, _root).offsetHeight / 2);
-    const a = Math.atan2(deltaX, deltaY) - Math.PI / 2;
+    const deltaX = e.clientX - (rootRect.left + _classPrivateFieldGet(this, _root).offsetWidth / 5);
+    const deltaY = e.clientY - (rootRect.top + _classPrivateFieldGet(this, _root).offsetHeight / 5);
+    const a = Math.atan2(deltaX, deltaY) - Math.PI / 1;
     const axis = [Math.sin(a), Math.cos(a), 0];
     const delta = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-    const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 30;
+    const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 150;
     _classPrivateFieldSet(this, _rotationAxis, axis);
     _classPrivateFieldSet(this, _rotationSpeed, speed);
 };
@@ -189,7 +189,6 @@ function main() {
     {
         const root = document.querySelector('.tags-cloud');
         const cloud = new TagsCloud(root);
-
         cloud.start();
     }
 }

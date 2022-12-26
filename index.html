@@ -19,9 +19,8 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   <!-- <script defer src="js/blob.js"></script> -->
-  <script defer src="js/slider.js"></script>
+  <script defer src="js/carousel.js"></script>
   <script defer src="js/script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -33,38 +32,25 @@
     <ul class='left'>
       <a href="#">
         <li>
-          <img draggable="false" src="assets/image/logo-blanc.png" alt="">
+          <img draggable="false" src="assets/images/logo-blanc.png" alt="">
         </li>
       </a>
     </ul>
     <ul class='mid'>
-      <li>
-        <a href="#">
-          Home
-          <!-- <svg viewBox="0 0 70 36">
-                  <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
-              </svg> -->
-        </a>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Skills</a>
-      </li>
-      <li>
-        <a href="#">Projets</a>
-      </li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#projets">Projets</a></li>
     </ul>
     <ul class='right'>
       <li>
         <a target="_blank" href="https://github.com/drissbenadjal">
-          <img src="assets/image/githublogo.png" alt="">
+          <img src="assets/images/githublogo.png" alt="">
         </a>
       </li>
       <li>
         <a target="_blank" href="https://www.linkedin.com/in/driss-benadjal-49585a221/">
-          <img src="assets/image/linkedinlogo.png" alt="">
+          <img src="assets/images/linkedinlogo.png" alt="">
         </a>
       </li>
     </ul>
@@ -103,6 +89,7 @@
           <li class='tag'><span class='wrap'>PHP</span></li>
           <li class='tag'><span class='wrap'>CSS</span></li>
           <li class='tag'><span class='wrap'>SVG</span></li>
+          <li class='tag'><span class='wrap'>Node js</span></li>
           <li class='tag'><span class='wrap'>Javascript</span></li>
           <li class='tag'><span class='wrap'>Discord.js</span></li>
           <li class='tag'><span class='wrap'>Electron.js</span></li>
@@ -126,63 +113,8 @@
           PORTFOLIO 2023 PORTFOLIO 2023
         </div>
       </section>
-      <section class='demo-gallery scroll-x'>
-        <ul class='wrapper'>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-        </ul>
-      </section>
-      <section class='demo-gallery scroll-x'>
-        <ul class='wrapper'>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-        </ul>
-      </section>
-      <section class='demo-gallery scroll-x'>
-        <ul class='wrapper'>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-        </ul>
-      </section>
-      <section class='demo-gallery scroll-x'>
-        <ul class='wrapper'>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-          <li>
-            <img height='874' src='' width='1240'>
-          </li>
-        </ul>
+      <section>
+
       </section>
       <section class='demo-text scroll-x'>
         <div class='wrapper text'>
@@ -209,65 +141,36 @@
     </div>
     <div class="bottom-container-scroll"></div>
 
-    <div class="slider-projets">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="slide-number">
-              <p><span>001</span></p>
-            </div>
-            <div class="slide-text">
-              <h4><span>tokyotr3</span></h4>
-            </div>
-            <div class="slide-img"></div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slide-number">
-              <p><span>002</span></p>
-            </div>
-            <div class="slide-text">
-              <h4><span>tokyogu4</span></h4>
-            </div>
-            <div class="slide-img"></div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slide-number">
-              <p><span>003</span></p>
-            </div>
-            <div class="slide-text">
-              <h4><span>tokyotv2</span></h4>
-            </div>
-            <div class="slide-img"></div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slide-number">
-              <p><span>004</span></p>
-            </div>
-            <div class="slide-text">
-              <h4><span>tokyort7</span></h4>
-            </div>
-            <div class="slide-img"></div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slide-number">
-              <p><span>005</span></p>
-            </div>
-            <div class="slide-text">
-              <h4><span>tokyogr8</span></h4>
-            </div>
-            <div class="slide-img"></div>
-          </div>
-
-        </div>
+    <div class="link link-hidden">
+      <svg viewBox='0 0 200 200' width='200' height='200' xmlns='http://www.w3.org/2000/svg' class="link__svg" aria-labelledby="link1-title link1-desc">0
+        <path id="link-circle" class="link__path" d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" stroke="none" fill="none" />
+        <path class="link__arrow" d="M 75 100 L 125 100 L 110 85 M 125 100 L 110 115"  fill="none" />
+        <text class="link__text">
+          <textPath href="#link-circle" stroke="none">
+            CLiquez ici pour le Projet
+          </textPath>
+        </text>
+      </svg>
+    </div>
+    <div class="carousel" id="projets">
+      <div class="carousel--wrap">
+      </div>
+      <div class="carousel--progress">
+        <div class="carousel--progress-bar"></div>
       </div>
     </div>
-
   </main>
+
+  <footer>
+    <section class="footer-top">
+      <h3>Lorem ipsum.</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat neque quam facere tenetur. Porro quia, sapiente natus consequuntur ullam dolore illum maiores quae nulla facilis sed repellat. Ipsam, ex magni.</p>
+      <a target="_blank" href="/contact.html">CONTACTER MOI</a>
+    </section>
+    <section class="footer-bottom">
+      
+    </section>
+  </footer>
 </body>
 
 </html>

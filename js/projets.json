@@ -1,0 +1,59 @@
+[
+    {
+        "id": "1",
+        "nom": "Dataviz",
+        "description": "Dataviz",
+        "image": "assets/images/projets/dataviz.png",
+        "url": "https://drissbenadjal.github.io/Dataviz/",
+        "github": "https://github.com/drissbenadjal/Dataviz"
+    },
+    {
+        "id": "2",
+        "nom": "Discord Tools",
+        "description": "L'application permet de configurer et de gérer un bot Discord en utilisant une interface utilisateur simple et intuitive, sans avoir à écrire de code. Elle permet également de définir des commandes personnalisées pour le bot et de les exécuter à l'aide de l'application.Le projet est écrit en JavaScript et utilise Electron js, une bibliothèque de développement de logiciels de bureau multiplateforme, pour créer l'application de bureau. Le code du projet est disponible sur GitHub et peut être consulté et téléchargé par les utilisateurs. Ce projet a été créé dans le but de simplifier la gestion de bots Discord pour les utilisateurs qui ne sont pas à l'aise avec le développement de code.",
+        "image": "",
+        "url": "",
+        "github": ""
+    },
+    {
+        "id": "3",
+        "nom": "MMind Chat",
+        "description": "",
+        "image": "",
+        "url": "https://benadjal.butmmi.o2switch.site/mmind-chat/",
+        "github": "https://github.com/drissbenadjal/chat-app"
+    },
+    {
+        "id": "4",
+        "nom": "Blog MVC",
+        "description": "",
+        "image": "",
+        "url": "https://blog.benadjal.butmmi.o2switch.site/",
+        "github": ""
+    },
+    {
+        "id": "5",
+        "nom": "ResaWeb",
+        "preDescription": "Site de réservation d'hôtel",
+        "description": "",
+        "image": "",
+        "url": "https://resaweb.benadjal.butmmi.o2switch.site/",
+        "github": ""
+    },
+    {
+        "id": "6",
+        "nom": "Renov Concept",
+        "description": "",
+        "image": "",
+        "url": "http://renovconceptargenteuil.com/",
+        "github": ""
+    },
+    {
+        "id": "7",
+        "nom": "Commu'Niquez Bot",
+        "description": "",
+        "image": "",
+        "url": "",
+        "github": "https://github.com/drissbenadjal/commu-niquez-botDiscord"
+    }
+]
