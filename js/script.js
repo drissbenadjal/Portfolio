@@ -1,6 +1,9 @@
 AOS.init();
 
-document.body.style.overflow = "hidden";
+if (window.location.href.indexOf("index") == 1) {
+  document.body.style.overflow = "hidden";
+}
+
 
 window.onscroll = function () {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -9,6 +12,10 @@ window.onscroll = function () {
     document.querySelector("nav").classList.remove("navbar-scrolled");
   }
 };
+
+document.querySelector("#scroll").addEventListener("click", () => {
+  document.querySelector("#about").scrollIntoView({behavior: "smooth"});
+});
 
 let LienProjetFooter = document.querySelectorAll("#footer-projet");
 function LienProjetFooterFonction() {
@@ -127,12 +134,12 @@ fetch('js/projets.json')
         let lienSite = '';
         let lienGithub = '';
         if (projetAffiche.url) {
-          lienSite = `<a href="${projetAffiche.url}" target="_blank">Aller sur le site <img src="assets/images/lien-externe.png" alt=""></a>`;
+          lienSite = `<a href="${projetAffiche.url}" target="_blank">Aller sur le site <img src="assets/images/lien-externe.webp" alt=""></a>`;
         } else {
           lienSite = '';
         }
         if (projetAffiche.github) {
-          lienGithub = `<a href="${projetAffiche.github}" target="_blank">Voir la page Github <img src="assets/images/githublogo.png" alt=""></a>`;
+          lienGithub = `<a href="${projetAffiche.github}" target="_blank">Voir la page Github <img src="assets/images/githublogo.webp" alt=""></a>`;
         } else {
           lienGithub = '';
         }
@@ -190,12 +197,12 @@ fetch('js/projets.json')
         let lienSite = '';
         let lienGithub = '';
         if (projetAffiche.url) {
-          lienSite = `<a href="${projetAffiche.url}" target="_blank">Aller sur le site <img src="assets/images/lien-externe.png" alt=""></a>`;
+          lienSite = `<a href="${projetAffiche.url}" target="_blank">Aller sur le site <img src="assets/images/lien-externe.webp" alt=""></a>`;
         } else {
           lienSite = '';
         }
         if (projetAffiche.github) {
-          lienGithub = `<a href="${projetAffiche.github}" target="_blank">Voir la page Github <img src="assets/images/githublogo.png" alt=""></a>`;
+          lienGithub = `<a href="${projetAffiche.github}" target="_blank">Voir la page Github <img src="assets/images/githublogo.webp" alt=""></a>`;
         } else {
           lienGithub = '';
         }

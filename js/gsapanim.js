@@ -14,7 +14,7 @@ const allGsap = () => {
       y: "-200%",
       duration: 1
     }); /* , "-=1" */
-  }, 6200);
+  }, 1000);
   setTimeout(() => {
     document.body.style.overflowY = "auto";
     tl.to(".text", {
@@ -25,7 +25,7 @@ const allGsap = () => {
     setTimeout(() => {
       document.querySelector('.tags-cloud').classList.add('-loaded');
     }, 1000);
-  }, 6500);
+  }, 1000);
 
   gsap.utils.toArray(".scroll-x").forEach((section, index) => {
     const w = section.querySelector(".wrapper");

@@ -400,17 +400,6 @@ header {
   padding: 80px 5%;
 }
 
-header video {
-  opacity: 0.8;
-  z-index: -1;
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-}
-
 header::before {
   z-index: -1;
   content: "";
@@ -512,28 +501,26 @@ header #blobCloud {
 header .header-text {
   position: relative;
   width: 100%;
-  transform: translate(0, -4vw);
 }
 
 header .header-text h1 {
   position: relative;
   margin: 0;
   font-size: 6vw;
-  word-wrap: wrap;
   overflow: hidden;
 }
 
 header .header-text h2 {
   margin: 0;
   font-size: 4vw;
-  transform: translate(5%, 9vw);
+  transform: translate(5%, -2.5vw);
   color: #ffffff3b;
 }
 
 header .header-text h3 {
   margin: 0;
   font-size: 2vw;
-  transform: translate(7px, 0vw);
+  transform: translate(7px, -4vw);
 }
 
 header .header-text #blobCloud {
@@ -1363,9 +1350,9 @@ footer .footer-top {
       from(#040404),
       color-stop(67%, hsla(0, 0%, 100%, 0))
     ),
-    url(../assets/images/footer-banner.jpg);
+    url(../assets/images/footer-banner.webp);
   background-image: linear-gradient(180deg, #040404, hsla(0, 0%, 100%, 0) 67%),
-    url(../assets/images/footer-banner.jpg);
+    url(../assets/images/footer-banner.webp);
   background-position: 0px 0px, 50% 75%;
   filter: grayscale(50%);
   background-size: auto, cover;
@@ -1748,17 +1735,17 @@ footer .footer-bottom .right button:active {
     justify-content: center;
     flex-direction: column-reverse;
   }
-  header .header-text h2 {
-    margin: 0;
-    font-size: calc(6.5vw + 1.5vh);
-    transform: translate(0, -3vw);
-    color: #ffffff3b;
-  }
   header .header-text h1 {
     position: relative;
     margin: 0;
     font-size: calc(7vw + 1.5vh);
     overflow: hidden;
+  }
+  header .header-text h2 {
+    margin: 0;
+    font-size: calc(6.5vw + 1.5vh);
+    transform: translate(0, 1.5vw);
+    color: #ffffff3b;
   }
   header .header-text h3 {
     margin: 0;
