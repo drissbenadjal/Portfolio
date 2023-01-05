@@ -1,3 +1,5 @@
+AOS.init();
+
 document.body.style.overflow = "hidden";
 
 window.onscroll = function () {
@@ -8,32 +10,18 @@ window.onscroll = function () {
   }
 };
 
-//recuperer tout les a dans la class .mid
-const mid = document.querySelectorAll(".mid a");
-
-//pour chaque a on ajoute un event
-mid.forEach((item) => {
-  item.addEventListener("mouseover", (e) => {
-    //recuperer uniquement le texte de l'a et le mettre en majuscule et le mettre dans #hover-text
-    document.querySelector("#hover-text").innerHTML =
-      e.target.innerText.toUpperCase();
-    document.querySelector("nav").classList.add("navbar-hover");
-    document.querySelector("nav").classList.remove("navbar-scrolled");
-    document.querySelector(".nav-hover").classList.add("active-hover");
-  });
-  item.addEventListener("mouseout", (e) => {
-    if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
-    ) {
-      document.querySelector("nav").classList.add("navbar-scrolled");
+let LienProjetFooter = document.querySelectorAll("#footer-projet");
+function LienProjetFooterFonction() {
+  LienProjetFooter.forEach((lien) => {
+    if(window.innerWidth < 950) {
+      lien.setAttribute("href", "#projets");
     } else {
-      document.querySelector("nav").classList.remove("navbar-scrolled");
+      lien.setAttribute("href", "#container-scroll");
     }
-    document.querySelector("nav").classList.remove("navbar-hover");
-    document.querySelector(".nav-hover").classList.remove("active-hover");
   });
-});
+}
+LienProjetFooterFonction();
+window.addEventListener("resize", LienProjetFooterFonction);
 
 let elements = document.querySelectorAll(".rolling-text");
 
@@ -61,9 +49,39 @@ elements.forEach((element) => {
   });
 });
 
-//cursor
+let BurgerBtn = document.querySelector(".mobile");
+let BurgerBtnActive = document.querySelector(".ham");
+let MenuMobile = document.querySelector(".menu-mobile");
+let MenuMobileLien = document.querySelectorAll(".menu-mobile #interne a");
 
-document.querySelector(".carousel").addEventListener("mousemove", (event) => {
+BurgerBtn.addEventListener("click", () => {
+  if (MenuMobile.classList.contains("menu-active")) {
+    for (let i = 0; i < 300; i++) {
+      setTimeout(() => {
+        MenuMobile.style.opacity = 1 - i / 300;
+      }, i * 1);
+    }
+    setTimeout(() => {
+      MenuMobile.classList.remove("menu-active");
+    }, 300);
+  } else {
+    MenuMobile.classList.add("menu-active");
+    for (let i = 0; i < 300; i++) {
+      setTimeout(() => {
+        MenuMobile.style.opacity = i / 300;
+      }, i * 1);
+    }
+  }
+});
+
+MenuMobileLien.forEach((lien) => {
+  lien.addEventListener("click", () => {
+    MenuMobile.classList.remove("menu-active");
+    BurgerBtnActive.classList.remove("active");
+  });
+});
+
+document.querySelector(".projets-container").addEventListener("mousemove", (event) => {
   document.addEventListener("mousemove", (event) => {
     document.querySelector(".link").style.left = event.clientX + "px";
     document.querySelector(".link").style.top = event.clientY + "px";
@@ -71,12 +89,155 @@ document.querySelector(".carousel").addEventListener("mousemove", (event) => {
       "translate(-50%, -50%) rotate(325deg)";
   });
   //quand on est au dessus du .carousel--item a on enleve la class link-hidden
-  document.querySelectorAll(".carousel--item a").forEach((item) => {
+  document.querySelectorAll(".projet").forEach((item) => {
     item.addEventListener("mouseover", () => {
       document.querySelector(".link").classList.remove("link-hidden");
     });
     item.addEventListener("mouseout", () => {
       document.querySelector(".link").classList.add("link-hidden");
+    });
+  });
+});
+
+
+const slider = document.querySelector('.projets-container');
+
+fetch('js/projets.json')
+.then(response => response.json())
+.then(data => {
+  // data.forEach((projet) => {
+  //   let carouselItems = document.createElement('section');
+  //   carouselItems.classList.add('projet');
+  //   carouselItems.dataset.id = projet.id;
+  //   carouselItems.innerHTML = `<img src="${projet.image}" alt="" />
+  //   <h2>${projet.nom}</h2>`;
+  //   slider.appendChild(carouselItems);
+  // });
+
+  let carouselItems = document.querySelectorAll('.projet');
+  carouselItems.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        
+      let id = item.dataset.id;
+      data.forEach((projetAffiche) => {
+        if (projetAffiche.id !== id) return;
+        if (document.querySelector('#afficheProjet')) {
+          document.querySelector('#afficheProjet').remove();
+        }
+        let lienSite = '';
+        let lienGithub = '';
+        if (projetAffiche.url) {
+          lienSite = `<a href="${projetAffiche.url}" target="_blank">Aller sur le site <img src="assets/images/lien-externe.png" alt=""></a>`;
+        } else {
+          lienSite = '';
+        }
+        if (projetAffiche.github) {
+          lienGithub = `<a href="${projetAffiche.github}" target="_blank">Voir la page Github <img src="assets/images/githublogo.png" alt=""></a>`;
+        } else {
+          lienGithub = '';
+        }
+        projetAffiche.description = projetAffiche.description.replace(/\. /g, '.<br><br>');
+        const divAfficheProjet = document.createElement('div');
+        divAfficheProjet.id = 'afficheProjet';
+        divAfficheProjet.dataset.aos="fade-in-up"
+        divAfficheProjet.innerHTML = `
+        <button id="closeAfficheProjet">
+          <svg width="25px" height="25px" viewBox="0 0 25 25" fill="#fff">
+            <path d="M24 12.001H2.914l5.294-5.295-.707-.707L1 12.501l6.5 6.5.707-.707-5.293-5.293H24v-1z"></path>
+          </svg>
+          <p>Retour aux projets</p>
+        </button>
+        <div class="affiche-projet-containers">
+          <div class="affiche-projet-left">
+            <img draggable="false" src="${projetAffiche.image}" alt=""/>
+          </div>
+          <div class="affiche-projet-right">
+            <h2>${projetAffiche.nom}</h2>
+            <div class="affiche-projet-lien">
+              ${lienSite}
+              ${lienGithub}
+            </div>
+            <p>${projetAffiche.description}</p>
+          </div>
+        </div>
+        `;
+        document.querySelector('.projet-affiche').appendChild(divAfficheProjet);
+        document.body.style.overflowY = 'hidden';
+        document.querySelector('#closeAfficheProjet').addEventListener('click', (e) => {
+          for (let i = 0; i < 100; i++) {
+            setTimeout(() => {
+              divAfficheProjet.style.opacity = 1 - i / 100;
+            }, i);
+          }
+          setTimeout(() => {
+            divAfficheProjet.remove();
+            document.body.style.overflowY = 'auto';
+          }, 200);
+        });
+      });
+    });
+  });
+
+  let carouselItemsMobile = document.querySelectorAll('.projets li');
+  carouselItemsMobile.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      let id = item.dataset.id;
+      data.forEach((projetAffiche) => {
+        if (projetAffiche.id !== id) return;
+        if (document.querySelector('#afficheProjet')) {
+          document.querySelector('#afficheProjet').remove();
+        }
+        let lienSite = '';
+        let lienGithub = '';
+        if (projetAffiche.url) {
+          lienSite = `<a href="${projetAffiche.url}" target="_blank">Aller sur le site <img src="assets/images/lien-externe.png" alt=""></a>`;
+        } else {
+          lienSite = '';
+        }
+        if (projetAffiche.github) {
+          lienGithub = `<a href="${projetAffiche.github}" target="_blank">Voir la page Github <img src="assets/images/githublogo.png" alt=""></a>`;
+        } else {
+          lienGithub = '';
+        }
+        projetAffiche.description = projetAffiche.description.replace(/\. /g, '.<br><br>');
+        const divAfficheProjet = document.createElement('div');
+        divAfficheProjet.id = 'afficheProjet';
+        divAfficheProjet.dataset.aos="fade-in-up"
+        divAfficheProjet.innerHTML = `
+        <button id="closeAfficheProjet">
+          <svg width="25px" height="25px" viewBox="0 0 25 25" fill="#fff">
+            <path d="M24 12.001H2.914l5.294-5.295-.707-.707L1 12.501l6.5 6.5.707-.707-5.293-5.293H24v-1z"></path>
+          </svg>
+          <p>Retour aux projets</p>
+        </button>
+        <div class="affiche-projet-containers">
+          <div class="affiche-projet-left">
+            <img draggable="false" src="${projetAffiche.image}" alt=""/>
+          </div>
+          <div class="affiche-projet-right">
+            <h2>${projetAffiche.nom}</h2>
+            <div class="affiche-projet-lien">
+              ${lienSite}
+              ${lienGithub}
+            </div>
+            <p>${projetAffiche.description}</p>
+          </div>
+        </div>
+        `;
+        document.querySelector('.projet-affiche').appendChild(divAfficheProjet);
+        document.body.style.overflowY = 'hidden';
+        document.querySelector('#closeAfficheProjet').addEventListener('click', (e) => {
+          for (let i = 0; i < 100; i++) {
+            setTimeout(() => {
+              divAfficheProjet.style.opacity = 1 - i / 100;
+            }, i);
+          }
+          setTimeout(() => {
+            divAfficheProjet.remove();
+            document.body.style.overflowY = 'auto';
+          }, 200);
+        });
+      });
     });
   });
 });

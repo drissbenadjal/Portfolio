@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio 2023 Driss Benadjal - Developpeur Web</title>
+
+  <!-- Meta description -->
+  <meta name="description" content="Je suis un développeur web junior passionné, j'ai une solide base en HTML, CSS, JavaScript et Node.js, et je suis également compétent en Next.js, Three.js et d'autres technologies du web.">
+  <meta property="og:title" content="Portfolio 2023 Driss Benadjal - Developpeur Web" />
+  <meta property="og:description" content="Je suis un développeur web junior passionné, j'ai une solide base en HTML, CSS, JavaScript et Node.js, et je suis également compétent en Next.js, Three.js et d'autres technologies du web." />
+  <meta property="og:image" content="https://drissbenadjal.fr/assets/images/logo-blanc.png" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <!-- fin Meta description -->
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <!-- fin Fonts -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- fin CSS -->
+
+  <!-- CSS externe  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- fin CSS externe -->
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+  <!-- fin Favicon -->
+</head>
+
+<body>
+    <nav>
+      <ul class='left'>
+        <a href="https://drissbenadjal.fr/">
+          <li>
+            <img draggable="false" src="assets/images/logo-blanc.png" alt="">
+          </li>
+        </a>
+      </ul>
+      <ul class='mid'>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#container-scroll">Projets</a></li>
+      </ul>
+      <ul class='right'>
+        <li>
+          <a target="_blank" href="https://github.com/drissbenadjal">
+            <img src="assets/images/githublogo.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/driss-benadjal-49585a221/">
+            <img src="assets/images/linkedinlogo.png" alt="">
+          </a>
+        </li>
+      </ul>
+      <ul class='mobile'>
+        <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+          <path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+          <path class="line middle" d="m 70,50 h -40" />
+          <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+        </svg>
+      </ul>
+    </nav>
+    <div class="menu-mobile">
+      <ul>
+        <li id="interne"><a href="#about">À propos</a></li>
+        <li id="interne"><a href="#skills">Compétences</a></li>
+        <li id="interne"><a href="#projets">Projets</a></li>
+        <li class="menu-mobile-reseaux">
+          <a target="_blank" href="https://github.com/drissbenadjal">
+            <img src="assets/images/githublogo.png" alt="">
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/driss-benadjal-49585a221/">
+            <img src="assets/images/linkedinlogo.png" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="erreur">
+        <div class="erreur-container">
+            <h1>ERREUR 404</h1>
+            <p>La page que vous recherchez n'existe pas.</p>
+        </div>
+    </div>
+
+  <footer>
+    <section class="footer-top">
+      <p>Vous pouvez consulter mon CV en ligne en cliquant sur le lien ci-dessous.</p>
+      <a target="_blank" href="#">Accédez à mon CV en ligne</a>
+    </section>
+    <section class="footer-bottom">
+      <div class="left">
+        <div class="container-footer">
+          <h3>Mes Réseaux</h3>
+          <a target="_blank" href="">Github <img src="./assets/images/githublogo.png" alt=""></a>
+          <a target="_blank" href="https://www.linkedin.com/in/driss-benadjal-1b1b1b1b1/">LinkedIn <img src="./assets/images/linkedinlogo.png" alt=""></a>
+        </div>
+      </div>
+      <div class="mid">
+        <div class="container-footer">
+          <h3>Navigation</h3>
+          <a href="#about">À propos</a>
+          <a href="#skills">Compétences</a>
+          <a href="#" id="footer-projet">Projets</a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="container-footer">
+          <h3>Contact</h3>
+          <a href="mailto:contact@drissbenadjal.fr">contact@drissbenadjal.fr</a>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <!-- Javascript externe -->
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- fin Javascript externe -->
+
+  <!-- Javascript -->
+  <script defer src="js/script.js"></script>
+  <!-- fin Javascript -->
+</body>
+
+</html>

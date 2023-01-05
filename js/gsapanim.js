@@ -1,33 +1,10 @@
-
-const loaderContainer = document.querySelector(".loader-container");
-
 gsap.registerPlugin(ScrollTrigger);
 
 const images = gsap.utils.toArray("img");
 
 const allGsap = () => {
 
-  loaderContainer.innerHTML = `<span class="txt1">https://drissbenadjal.dev/</span><span class="txt2">portfolio</span><div class="bar"></div>`;
-
-  var t2 = new SplitText('.txt2').chars,
-    color2 = '#17c0fd',
-    color1 = '#fff',
-    moveBar = () => { gsap.set('.bar', { left: gsap.getProperty('.txt1', 'width') + 1 }) };
-
   gsap.timeline({ delay: 0.2 })
-    .set('.txt1', { color: color1, fontWeight: 'regular' })
-    .set('.txt2', { color: color2, fontWeight: 'bold', opacity: 0, x: gsap.getProperty('.txt1', 'width') - 2, immediateRender: true })
-    .set('.bar', { left: 1, backgroundColor: color1, immediateRender: true })
-
-    .to('.bar', { duration: 0.1, opacity: 0, ease: Expo.easeIn, yoyo: true, repeat: 5, repeatDelay: 0.3 }, 0)
-    .from('.txt1', { duration: 1.1, width: 0, ease: SteppedEase.config(14), onUpdate: moveBar }, 2.5)
-    .to('.bar', { duration: 0.05, backgroundColor: color2 }, '+=0.15')
-    .to('.bar', { duration: 1.0, width: 160, ease: Power4.easeInOut }, '+=0.1')
-    .from('.loader-container', { duration: 1.0, x: 135, ease: Power4.easeInOut }, '-=1.0')
-    .to('.txt2', { duration: 0.01, opacity: 1 }, '-=0.1')
-    .to('.bar', { duration: 0.4, x: 160, width: 0, ease: Power4.easeIn })
-    .from(t2, { duration: 0.6, opacity: 0, ease: Power3.easeInOut, stagger: 0.02 }, '-=0.5')
-    .to('.txt1', { duration: 1.5, opacity: 0.25, ease: Power3.easeInOut }, '-=1.2')
     .timeScale(1.45)
 
   const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
@@ -75,21 +52,34 @@ const allGsap = () => {
     scrollTrigger: {
       trigger: "#container-scroll",
       start: "top top",
-      end: "+=1000",
+      end: "+=1500",
       pin: true,
       scrub: 1
     },
   });
 
   gsap.to("#container-scroll .stretch-text", {
-    scale: 2,
+    scale: 1.8,
     scrollTrigger: {
       trigger: "#container-scroll .stretch-text",
       scrub: 1,
     },
   });
-};
 
+  let sections = gsap.utils.toArray(".projet");
+  gsap.to(sections, {
+    xPercent: -115.5 * (sections.length - 1),
+    ease: "none", // <-- IMPORTANT!
+    scrollTrigger: {
+      trigger: ".projets-container",
+      pin: true,
+      scrub: 0.5,
+      start: "center center",
+      end: "+=3500"
+    }
+  });
+
+};
 
 
 window.addEventListener("load", allGsap);
