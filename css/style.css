@@ -1296,6 +1296,24 @@ header .header-text #blobCloud {
   transition: all 0.3s ease;
 }
 
+.mentions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px 50px;
+}
+
+.mentions p, .mentions ul {
+  max-width: 450px;
+  line-height: 1.5;
+}
+
+.mentions a {
+  width: fit-content;
+}
+
 .erreur {
   width: 100%;
   height: 70vh;
